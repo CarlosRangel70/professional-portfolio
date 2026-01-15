@@ -5,6 +5,8 @@
   <title>Professional Portfolio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
   <style>
     * {
       box-sizing: border-box;
@@ -34,12 +36,12 @@
     }
 
     .photo {
-      width: 180px;
-      height: 180px;
-      margin: 0 auto 30px;
+      width: 280px;
+      height: 280px;
+      margin: 0 auto 80px;
       border-radius: 50%;
       border: 5px solid #fff;
-      background-image: url("profile.jpg");
+      background-image: url("Profile.jpeg");
       background-size: cover;
       background-position: center;
     }
@@ -114,6 +116,113 @@
         padding: 40px;
       }
     }
+	
+	.icon-circle {
+	  display: inline-flex;
+	  align-items: center;
+	  justify-content: center;
+	  width: 30px;
+	  height: 30px;
+	  border-radius: 50%;
+	  background-color: #fff;
+	  color: #111;
+	  margin-right: 10px;
+	  font-size: 14px;
+	}
+
+	a {
+	  color: inherit;
+	  text-decoration: none;
+	}
+
+	a:hover {
+	  text-decoration: underline;
+	}
+	
+	.supporting-title {
+		position: relative;
+		color: #fff;
+		padding: 6px 12px;
+		margin-bottom: 25px;
+		z-index: 1;
+	}
+
+	.supporting-title::before {
+		content: "";
+		position: absolute;
+		left: 0;
+		top: 0;
+		height: 100%;          /* 🔥 CUBRE TODO EL TEXTO */
+		width: 95%;            /* LARGO DEL RECTÁNGULO */
+		background-color: #000;
+		z-index: -1;           /* 🔥 SE VA DETRÁS DEL TEXTO */
+	}
+
+	.column.right {
+		position: relative;
+	}
+	
+	.experience {
+		margin-top: 40px;
+	}
+
+	.experience-grid {
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		gap: 30px;
+	}
+
+	.experience-column h5 {
+		margin-bottom: 10px;
+		font-size: 0.95rem;
+		font-weight: 600;
+	}
+
+	.experience-column ul {
+		list-style: none;
+		padding-left: 0;
+		margin: 0;
+	}
+
+	.experience-column li {
+		margin-bottom: 6px;
+		font-size: 0.9rem;
+	}
+	
+	.skill-hint {
+	  display: inline-block;
+	  align-items: center;
+	  gap: 10px;
+	  font-size: 0.9rem;
+	  color: #555;
+	}
+
+	.arrow-link {
+	  width: 26px;
+	  height: 26px;
+	  border: 2px solid #000;
+	  border-radius: 50%;
+	  display: flex;
+	  align-items: center;
+	  justify-content: center;
+	  text-decoration: none;
+	  color: #000;
+	  font-weight: bold;
+	  transition: all 0.3s ease;
+	}
+
+	.arrow-link:hover {
+	  background-color: #000;
+	  color: #fff;
+	}
+	
+	.arrow-link.disabled {
+	  /* pointer-events: none;    🔥 DESACTIVA EL CLICK */
+	  border-color: #999;
+	  color: #999;
+	  cursor: not-allowed;
+	}	
+	
   </style>
 </head>
 
@@ -128,32 +237,44 @@
 
     <h3>Contact</h3>
     <ul>
-      <li>Email: your@email.com</li>
-      <li>GitHub: github.com/yourusername</li>
+		<li>
+		  <span class="icon-circle">
+			<i class="fa-solid fa-envelope"></i>
+		  </span>
+		  carlos.rangel.dev@hotmail.com
+		</li>
+		
+		<li>
+		  <span class="icon-circle">
+			<i class="fa-brands fa-github"></i>
+		  </span>
+		  <a href="https://carlosrangel70.github.io/professional-portfolio/" target="_blank">
+			github.com/carlosrangel70
+		  </a>
+		</li>
+		
+		<li>
+		  <span class="icon-circle">
+			<i class="fa-brands fa-youtube"></i>
+		  </span>
+		  <a href="https://www.youtube.com/@TU_CANAL" target="_blank">
+			Video Communication Samples (YouTube)
+		  </a>
+		</li>		
     </ul>
-
-    <h3>Services</h3>
-    <ul>
-      <li>.NET Development</li>
-      <li>SQL Server</li>
-      <li>Technical Documentation</li>
-      <li>Audio & Video Transcription</li>
-      <li>Virtual Assistant Services</li>
-    </ul>
-
+   
   </div>
 
   <!-- RIGHT COLUMN -->
   <div class="right">
 
-    <h1>Your Name</h1>
+    <h1>Carlos Alberto Rangel Santiago</h1>
     <div class="title">
-      Senior .NET Developer & SQL Server Specialist<br>
-      18 Years of Professional Experience
+      Senior .NET Developer & SQL Server Specialist
     </div>
 
     <div class="section">
-      <h2>Professional Summary</h2>
+      <h4 class="supporting-title">Professional Summary</h4>
       <ul>
         <li>Senior software developer with 18 years of experience in .NET and SQL Server.</li>
         <li>Strong background in backend systems, data handling, and reliability.</li>
@@ -162,23 +283,120 @@
       </ul>
     </div>
 
+	<div class="section">
+      <h4 class="supporting-title">Core Skills</h4>
+      <ul class="indent">
+        <li>SQL Server Development
+			<div class="skill-hint">
+			  <a href="details.html" class="arrow-link disabled" onclick="event.preventDefault()" title="View detailed experience (Under construction)">
+				&#10132;
+			  </a>
+			</div>
+		</li>
+        <li>SQL Server Administration
+			<div class="skill-hint">
+			  <a href="details.html" class="arrow-link disabled" onclick="event.preventDefault()" title="View detailed experience (Under construction)">
+				&#10132;
+			  </a>
+			</div>		
+		</li>
+        <li>.NET Application Development
+			<div class="skill-hint">
+			  <a href="details.html" class="arrow-link disabled" onclick="event.preventDefault()" title="View detailed experience (Under construction)">
+				&#10132;
+			  </a>
+			</div>		
+		</li>
+        <li>Web Application Development
+			<div class="skill-hint">
+			  <a href="details.html" class="arrow-link disabled" onclick="event.preventDefault()" title="View detailed experience (Under construction)">
+				&#10132;
+			  </a>
+			</div>		
+		</li>
+      </ul>
+	</div>
+	
     <div class="section">
-      <h2>Skills</h2>
+      <h4 class="supporting-title">Supporting Skills</h4>
       <ul>
-        <li>.NET / C# Development</li>
-        <li>SQL Server (queries, optimization)</li>
-        <li>Technical Documentation</li>
-        <li>Audio & Video Transcription</li>
-        <li>Remote Assistance & Support</li>
+        <li>Technical Documentation
+			<div class="skill-hint">
+			  <a href="details.html" class="arrow-link disabled" onclick="event.preventDefault()" title="View detailed experience (Under construction)">
+				&#10132;
+			  </a>
+			</div>			
+		</li>
+        <li>Audio & Video Transcription
+			<div class="skill-hint">
+			  <a href="details.html" class="arrow-link disabled" onclick="event.preventDefault()" title="View detailed experience (Under construction)">
+				&#10132;
+			  </a>
+			</div>			
+		</li>
+        <li>Virtual Assistant & Remote Support
+			<div class="skill-hint">
+			  <a href="details.html" class="arrow-link disabled" onclick="event.preventDefault()" title="View detailed experience (Under construction)">
+				&#10132;
+			  </a>
+			</div>			
+		</li>
+        <li>Clear Written & Verbal Communication
+			<div class="skill-hint">
+			  <a href="details.html" class="arrow-link disabled" onclick="event.preventDefault()" title="View detailed experience (Under construction)">
+				&#10132;
+			  </a>
+			</div>			
+		</li>
+		<li>Video Editing & Content Creation
+			<div class="skill-hint">
+			  <a href="details.html" class="arrow-link disabled" onclick="event.preventDefault()" title="View detailed experience (Under construction)">
+				&#10132;
+			  </a>
+			</div>				
+		</li>
       </ul>
     </div>
 
     <div class="section">
-      <h2>Video Samples</h2>
-      <ul>
-        <li><a href="https://www.youtube.com" target="_blank">YouTube Sample Video 1</a></li>
-        <li><a href="https://www.youtube.com" target="_blank">YouTube Sample Video 2</a></li>
-      </ul>
+	  <h4 class="supporting-title">Professional Experience (Selected Clients)</h4>
+	  
+		  <div class="experience-grid">
+
+			<div class="experience-column">
+			  <h5>🏢 Financial & Banking Sector</h5>
+			  <ul class="indent">
+				<li>Scotiabank</li>
+				<li>Afore XXI Banorte</li>
+				<li>GBM</li>
+				<li>Credit Suisse</li>
+			  </ul>
+			</div>
+
+			<div class="experience-column">
+			  <h5>🏥 Insurance & Healthcare</h5>
+			  <ul>
+				<li>Reaseguradora Patria</li>
+				<li>Medi Access</li>
+			  </ul>
+			</div>
+
+			<div class="experience-column">
+			  <h5>🏛 Government & Public Sector</h5>
+			  <ul>
+				<li>CISEN</li>
+				<li>SEDESOL</li>
+			  </ul>
+			</div>
+
+			<div class="experience-column">
+			  <h5>📺 Media & Enterprise</h5>
+			  <ul>
+				<li>Televisa</li>
+			  </ul>
+			</div>
+
+		  </div>
     </div>
 
   </div>
